@@ -23,6 +23,7 @@ public class JobTest {
         test_job2 = new Job();
         test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        test_job5 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
 
     }
@@ -58,4 +59,42 @@ public class JobTest {
         assertFalse(test_job3.equals(test_job4));
     }
 
+    //use TDD to build toString Method
+    //test method before making it
+    //
+//    @Test
+//    public void testToStringReturnsBlankLine(){
+//        String testString = test_job4.toString();
+//        char firstChar = testString.charAt(0);
+//        char lastChar = testString.charAt(testString.length());
+//        assertTrue(firstChar=="\n") && lastChar.equals("\n") );
+//    }
+    @Test
+    public void testToStringReturnsEachFieldLabelAndData(){
+        assertEquals(
+                "\n"+
+                        "ID: "+ test_job4.getId() + "\n" +
+                        "Name: Product tester" +  "\n" +
+                        "Employer: ACME" + "\n" +
+                        "location: Desert" + "\n" +
+                        "Position Type: Quality control" + "\n" +
+                        "Core Competency: Persistence"
+                        +"\n"
+                , test_job4.toString());
+
+    }
+    @Test
+    public void testToStringWithEmptyField(){
+        assertEquals("\n"+
+                        "ID: "+ test_job5.getId() + "\n" +
+                        "Name: Product tester" +  "\n" +
+                        "Employer: ACME" + "\n" +
+                        "location: Data not available" + "\n" +
+                        "Position Type: Quality control" + "\n" +
+                        "Core Competency: Persistence"
+                        +"\n"
+                , test_job5.toString());
+
+
+    }
 }
