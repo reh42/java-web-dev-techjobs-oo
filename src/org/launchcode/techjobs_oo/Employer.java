@@ -15,7 +15,7 @@ public class Employer {
     public Employer(String value) {
         this();
         //what does line 16 do?
-        //"ncluding this(); in any Employer constructor makes initializing id a default behavior" how?
+        //"including this(); in any Employer constructor makes initializing id a default behavior" how?
         this.value = value;
         //is aValue in directions
     }
