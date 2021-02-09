@@ -47,7 +47,35 @@ public class Job {
 
     @Override
     public String toString() {
-       // if (name == "" || employer.getValue() == "")
+        //BONUS this covers empty constructor, but will return the same if only null is entered for name. so it does not quite work.
+        // but if i dont have it, then the whole thing will error whenever a null is entered anywhere in the second constructor.
+//        if(name ==null) {
+//            //this.name="Data not available";
+//            return "OOPS! This job does not seem to exist.";
+//        }
+        //I think this method will error if null is entered anywhere in the second constructor other than name. can't figure out why.
+        // not sure how to get past NullPointerException error when using getValue() or SetValue()
+        // for some reason I also get this error if I put the "" if statements and the null if statements together
+//        if(employer ==null){
+//            employer.setValue("Data not available");
+//        }
+
+        if (name.equals("")){
+            this.name="Data not available";
+        }
+        if (employer.getValue().equals("")){
+            employer.setValue("Data not available");
+        }
+        if (location.getValue().equals("")){
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue().equals("")){
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue().equals("")){
+            coreCompetency.setValue("Data not available");
+        }
+
         return "\n"+
                 "ID: " + id +"\n" +
                 "Name: " + name + "\n" +

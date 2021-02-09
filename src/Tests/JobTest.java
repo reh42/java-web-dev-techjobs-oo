@@ -16,6 +16,7 @@ public class JobTest {
     Job test_job3;
     Job test_job4;
     Job test_job5;
+    Job test_job6;
 
     @Before
     public void createJobObject(){
@@ -24,7 +25,7 @@ public class JobTest {
         test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_job5 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
+        test_job5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
 
     }
 
@@ -62,13 +63,14 @@ public class JobTest {
     //use TDD to build toString Method
     //test method before making it
     //
-//    @Test
-//    public void testToStringReturnsBlankLine(){
-//        String testString = test_job4.toString();
-//        char firstChar = testString.charAt(0);
-//        char lastChar = testString.charAt(testString.length());
-//        assertTrue(firstChar=="\n") && lastChar.equals("\n") );
-//    }
+    @Test
+    public void testToStringReturnsBlankLine(){
+        String testString = test_job4.toString();
+        String firstChar = testString.substring(0,1);
+        String lastChar = testString.substring(testString.length()-1,testString.length());
+        assertTrue(firstChar.equals("\n") && lastChar.equals("\n")  );
+
+    }
     @Test
     public void testToStringReturnsEachFieldLabelAndData(){
         assertEquals(
@@ -97,4 +99,14 @@ public class JobTest {
 
 
     }
+    //“OOPS! This job does not seem to exist.”
+    //test with empty constructor and constructor with "" for each parameter
+    //Bonus
+//    @Test
+//    public void testToStringWhenOnlyID(){
+//        assertEquals("OOPS! This job does not seem to exist.", test_job6);
+//        assertEquals("OOPS! This job does not seem to exist.", test_job);
+//
+//    }
+
 }

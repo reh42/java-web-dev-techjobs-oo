@@ -3,10 +3,13 @@ package org.launchcode.techjobs_oo;
 public class Main {
 
     public static void main(String[] args) {
-       Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+       Job test_job4 = new Job(null, new Employer(null), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String printMe = test_job4.toString();
        System.out.println(test_job4.toString());
-        System.out.println(printMe.charAt(0));
+       // System.out.println(printMe.charAt(0));
+        System.out.println(printMe.substring(0, 1));
+        System.out.println(printMe.substring(printMe.length()-1, printMe.length()));
+        System.out.println(printMe.length());
     }}
 
 //        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
