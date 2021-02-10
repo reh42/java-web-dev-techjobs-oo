@@ -104,9 +104,9 @@ public class JobTest {
     //Bonus
 //    @Test
 //    public void testToStringWhenOnlyID(){
-//        assertEquals("OOPS! This job does not seem to exist.", test_job6);
+//        //assertEquals("OOPS! This job does not seem to exist.", test_job6);
 //        assertEquals("OOPS! This job does not seem to exist.", test_job);
 //
 //    }
-
+//does not pass because while what is returned is the statement, expected is String and actual is jobs class. not sure how to fix that.
 }

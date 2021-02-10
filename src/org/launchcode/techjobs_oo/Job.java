@@ -49,15 +49,21 @@ public class Job {
     public String toString() {
         //BONUS this covers empty constructor, but will return the same if only null is entered for name. so it does not quite work.
         // but if i dont have it, then the whole thing will error whenever a null is entered anywhere in the second constructor.
-//        if(name ==null) {
-//            //this.name="Data not available";
-//            return "OOPS! This job does not seem to exist.";
-//        }
-        //I think this method will error if null is entered anywhere in the second constructor other than name. can't figure out why.
-        // not sure how to get past NullPointerException error when using getValue() or SetValue()
-        // for some reason I also get this error if I put the "" if statements and the null if statements together
+        if(name ==null) {
+            //this.name="Data not available";
+            return "OOPS! This job does not seem to exist.";
+        }
+        //BONUS if all parameters in constructor two are entered with ""
+        if (name.equals("") && employer.toString().equals("") && location.toString().equals("") && positionType.toString().equals("") && coreCompetency.toString().equals("") ){
+            return "OOPS! This job does not seem to exist.";
+        }
+        //I think this method will error if null is entered anywhere in the second constructor other than name.
+            // It throws an error when i try to use setValue().
+            // so I don't have a way to create the output to have "Data not available" in the correct row if null is used.
+        // for some reason I also get this error if I put the "" if statements and the null if statements together (if name.equals("") || name==null)
 //        if(employer ==null){
 //            employer.setValue("Data not available");
+//             this does not work so not sure how to get correct outcome without typing whole thing each time
 //        }
 
         if (name.equals("")){
