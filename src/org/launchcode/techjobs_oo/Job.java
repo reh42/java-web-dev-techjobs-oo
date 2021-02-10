@@ -63,7 +63,7 @@ public class Job {
         if (name.equals("")){
             this.name="Data not available";
         }
-        if (employer.getValue().equals("")){
+        if (employer.toString().equals("")){
             employer.setValue("Data not available");
         }
         if (location.getValue().equals("")){
